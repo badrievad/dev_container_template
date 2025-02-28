@@ -1,0 +1,34 @@
+{
+	"name": "Python 3.12",
+	"build": {
+	  "dockerfile": "Dockerfile"
+	},
+	"postCreateCommand": "poetry config virtualenvs.in-project true && poetry install  && poetry update",
+	"customizations": {
+	  "vscode": {
+		"extensions": [
+		  "ms-python.python",
+		  "ms-azuretools.vscode-docker",
+		  "GitLab.gitlab-workflow",
+		  "ms-python.black-formatter",
+		  "streetsidesoftware.code-spell-checker",
+		  "streetsidesoftware.code-spell-checker-russian",
+		  "codeium.codeium",
+		  "ms-python.mypy-type-checker",
+		  "charliermarsh.ruff"
+		],
+		"settings": {
+		  "terminal.integrated.defaultProfile.linux": "zsh",
+		  "terminal.integrated.profiles.linux": {
+			"zsh": {
+			  "path": "/usr/bin/zsh",
+			  "args": []
+			}
+		  },
+		  "python.defaultInterpreterPath": "${workspaceFolder}/.venv/bin/python"
+		}
+	  }
+	},
+	"remoteUser": "vscode"
+  }
+  

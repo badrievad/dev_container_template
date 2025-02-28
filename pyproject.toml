@@ -1,0 +1,23 @@
+[tool.poetry]
+package-mode = false
+
+[project]
+name = "dev-container-template"
+version = "0.1.0"
+description = ""
+authors = [
+    {name = "badrievad",email = "zzdl4@bk.ru"}
+]
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+]
+
+[tool.poetry.group.dev.dependencies]
+black = ">=24.4.2"
+pytest = ">=8.3.4"
+pytest-asyncio = "^0.25.3"
+
+[build-system]
+requires = ["poetry-core>=2.0.0"]
+build-backend = "poetry.core.masonry.api"
