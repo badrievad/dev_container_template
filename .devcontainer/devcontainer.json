@@ -3,7 +3,7 @@
 	"build": {
 	  "dockerfile": "Dockerfile"
 	},
-	"postCreateCommand": "poetry config virtualenvs.in-project true && poetry install  && poetry update",
+	"postCreateCommand": "poetry config virtualenvs.in-project true && poetry install  && poetry update && sudo apt-get update && sudo apt-get install dos2unix && sudo dos2unix /home/vscode/.zshrc",
 	"customizations": {
 	  "vscode": {
 		"extensions": [
