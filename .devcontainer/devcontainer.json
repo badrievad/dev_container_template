@@ -3,6 +3,9 @@
 	"build": {
 	  "dockerfile": "Dockerfile"
 	},
+	"features": {
+	  "ghcr.io/devcontainers/features/docker-in-docker:latest": {}
+	},
 	"postCreateCommand": "uv sync && uv sync --upgrade && sudo apt-get update && sudo apt-get install dos2unix && sudo dos2unix /home/vscode/.zshrc",
 	"customizations": {
 	  "vscode": {
