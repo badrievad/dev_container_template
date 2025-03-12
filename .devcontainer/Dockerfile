@@ -12,8 +12,11 @@ RUN apt-get update && apt-get install -y \
 USER vscode
 WORKDIR /home/vscode
 
-# Устанавливаем Poetry
-RUN pip install poetry && pip install --upgrade pip
+# Устанавливаем UV
+RUN curl -LsSf https://astral.sh/uv/install.sh | sh && \
+    echo 'export PATH="$HOME/.local/bin:$PATH"' >> ~/.zshrc && \
+    export PATH="$HOME/.local/bin:$PATH" && \
+    uv self update
 
 # Устанавливаем плагины для Zsh
 RUN git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions && \

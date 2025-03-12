@@ -3,7 +3,7 @@
 	"build": {
 	  "dockerfile": "Dockerfile"
 	},
-	"postCreateCommand": "poetry config virtualenvs.in-project true && poetry install  && poetry update && sudo apt-get update && sudo apt-get install dos2unix && sudo dos2unix /home/vscode/.zshrc",
+	"postCreateCommand": "uv sync && uv sync --upgrade && sudo apt-get update && sudo apt-get install dos2unix && sudo dos2unix /home/vscode/.zshrc",
 	"customizations": {
 	  "vscode": {
 		"extensions": [
@@ -25,7 +25,11 @@
 			  "args": []
 			}
 		  },
-		  "python.defaultInterpreterPath": "${workspaceFolder}/.venv/bin/python"
+		  "python.defaultInterpreterPath": "${workspaceFolder}/.venv/bin/python",
+		  "python.formatting.provider": "black",
+		  "editor.formatOnSave": true,
+		  "python.linting.enabled": true,
+		  "python.linting.pylintEnabled": true
 		}
 	  }
 	},
